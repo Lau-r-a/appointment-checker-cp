@@ -7,7 +7,7 @@ function Header() {
     top: "0",
     left: "0",
     right: "0",
-    fontSize: "125%",
+    fontSize: "175%",
     color: LucyColors.blush,
     backgroundColor: LucyColors.englishViolet,
     borderBottom: `1px solid ${LucyColors.eggplant}`
