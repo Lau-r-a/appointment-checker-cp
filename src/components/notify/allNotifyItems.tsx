@@ -1,7 +1,7 @@
 import React from "react"
 import { LucyColors } from "../../lucyStyling"
 
-function AllNotify() {
+function AllNotifyItems() {
   const allBodyCSS: React.CSSProperties = {
     textAlign: "center",
     background: LucyColors.eggplant,
@@ -41,4 +41,4 @@ function AllNotify() {
   )
 }
 
-export default AllNotify
+export default AllNotifyItems
