@@ -8,6 +8,7 @@ function Header() {
     left: "0",
     right: "0",
     fontSize: "175%",
+    fontFamily: "Helvetica",
     color: LucyColors.blush,
     backgroundColor: LucyColors.englishViolet,
     borderBottom: `1px solid ${LucyColors.eggplant}`

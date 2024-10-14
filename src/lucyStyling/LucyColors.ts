@@ -1,14 +1,14 @@
 enum LucyColors {
-  apricot = "#FACEB3ff",
-  englishViolet = "#433544ff",
-  eggplant = "#7C5465ff",
-  charcoal = "#374958ff",
-  raisinBlack = "#2E2C3Dff",
-  eggplantTwo = "#715565ff",
-  blush = "#C26880ff",
-  raisinBlackTwo = "#2F2B3Bff",
-  raisinBlackThree = "#2E2C3Dff",
-  gunmetal = "#282F3Fff"
+  apricot = "#FACEB3",
+  englishViolet = "#433544",
+  eggplant = "#7C5465",
+  charcoal = "#374958",
+  raisinBlack = "#2E2C3D",
+  eggplantTwo = "#715565",
+  blush = "#C26880",
+  raisinBlackTwo = "#2F2B3B",
+  raisinBlackThree = "#2E2C3D",
+  gunmetal = "#282F3F"
 }
 
 export default LucyColors

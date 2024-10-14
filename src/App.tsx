@@ -1,6 +1,8 @@
-import { Footer, Header } from "./components"
+import { AllNotifyItems, Footer, Header } from "./components"
 import { MainPage } from "./page"
 import { LucyColors } from "./lucyStyling"
+import { useState } from "react"
+import { CurNotifyStateEnum } from "./models"
 
 function App() {
   const indexCSS: React.CSSProperties = {
@@ -12,10 +14,12 @@ function App() {
     margin: "0"
   }
 
+  const {curState, setCurState} = useState<CurNotifyStateEnum>(CurNotifyStateEnum.ALLITEMS)
+
   return(
     <div style={indexCSS}>
       <Header />
-      <MainPage />
+      <MainPage state={curState}/>
       <Footer />
     </div>
   )
