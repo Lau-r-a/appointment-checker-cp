@@ -5,7 +5,11 @@ import {
   CheckNotify } from "../../components"
 import { CurNotifyStateEnum } from "../../models"
 
-function MainPage({state}: CurNotifyStateEnum) {
+interface Props {
+  state: CurNotifyStateEnum
+}
+
+function MainPage(props: Props) {
   const mainBodyCSS: React.CSSProperties = {
     position: "absolute",
     border: "1px solid red",
@@ -13,7 +17,7 @@ function MainPage({state}: CurNotifyStateEnum) {
     marginLeft: "2.5vw",
     width: "95vw",
   }
-  switch (state) {
+  switch (props.state) {
     case CurNotifyStateEnum.ALLITEMS:
       return(
         <>
