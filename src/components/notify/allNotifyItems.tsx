@@ -1,7 +1,14 @@
 import React from "react"
 import { LucyColors } from "../../lucyStyling"
+import { CurNotifyStateEnum } from "../../models"
+import NotifyItem from "./notifyItem"
 
-function AllNotifyItems() {
+interface Props {
+  state: CurNotifyStateEnum,
+  setState: React.Dispatch<React.SetStateAction<CurNotifyStateEnum>>
+}
+
+function AllNotifyItems(props: Props) {
   const allBodyCSS: React.CSSProperties = {
     textAlign: "center",
     background: LucyColors.eggplant,
@@ -33,8 +40,13 @@ function AllNotifyItems() {
         <div
           style={tableItemCSS}
         >
-          Testitem
-          
+          <NotifyItem id={"666"} drLibParams={{
+            visitMotiveIds: 0,
+            agendaIds: 0,
+            practiceIds: 0,
+            insuranceSector: "999",
+            telehealth: false
+          }}          />
         </div>
       </div>
     </div>
