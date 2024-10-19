@@ -1,3 +1,4 @@
+import { SetStateAction } from "react"
 import { 
   AllNotifyItems, 
   CreateNotify,
@@ -7,6 +8,7 @@ import { CurNotifyStateEnum } from "../../models"
 
 interface Props {
   state: CurNotifyStateEnum
+  setState: React.Dispatch<React.SetStateAction<CurNotifyStateEnum>>
 }
 
 function MainPage(props: Props) {
@@ -24,7 +26,7 @@ function MainPage(props: Props) {
           <div
           style={mainBodyCSS}
         >
-          <AllNotifyItems />
+          <AllNotifyItems props={props.setState}/>
         </div>
         </>
       )

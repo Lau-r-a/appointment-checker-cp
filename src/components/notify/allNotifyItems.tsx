@@ -5,7 +5,6 @@ import NotifyItem from "./notifyItem"
 
 interface Props {
   state: CurNotifyStateEnum,
-  setState: React.Dispatch<React.SetStateAction<CurNotifyStateEnum>>
 }
 
 function AllNotifyItems(props: Props) {
@@ -46,7 +45,8 @@ function AllNotifyItems(props: Props) {
             practiceIds: 0,
             insuranceSector: "999",
             telehealth: false
-          }}          />
+          }}
+          />
         </div>
       </div>
     </div>

@@ -1,6 +1,10 @@
 import Notification from "../../models/notification"
+import { CurNotifyStateEnum } from "../../models"
+interface Props {
+  setState: React.Dispatch<React.SetStateAction<CurNotifyStateEnum>>
+}
 
-function NotifyItem(item: Notification) {
+function NotifyItem(item: Notification, props: Props) {
   return(
     <div>
       <div>
@@ -27,7 +31,11 @@ function NotifyItem(item: Notification) {
         <p>VisitMotiveIds:</p>
         <p>{item.drLibParams.visitMotiveIds}</p>  
       </div>
-      <button>Delete item</button>
+      <button
+        onClick = {props.setState(CurNotifyStateEnum.DELETE)}
+      >
+        Delete item
+      </button>
     </div>
   )
 }
