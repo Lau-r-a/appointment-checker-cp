@@ -1,10 +1,9 @@
+import useNotifyStore from "../../stores/notifyStateStore"
 import Notification from "../../models/notification"
 import { CurNotifyStateEnum } from "../../models"
-interface Props {
-  setState: React.Dispatch<React.SetStateAction<CurNotifyStateEnum>>
-}
 
-function NotifyItem(item: Notification, props: Props) {
+function NotifyItem(item: Notification) {
+  const { setNotifyState } = useNotifyStore()
   return(
     <div>
       <div>
@@ -32,7 +31,7 @@ function NotifyItem(item: Notification, props: Props) {
         <p>{item.drLibParams.visitMotiveIds}</p>  
       </div>
       <button
-        onClick = {props.setState(CurNotifyStateEnum.DELETE)}
+        onClick = {() => setNotifyState(CurNotifyStateEnum.DELETE)}
       >
         Delete item
       </button>

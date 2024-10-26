@@ -1,13 +1,8 @@
 import React from "react"
-import { LucyColors } from "../../lucyStyling"
-import { CurNotifyStateEnum } from "../../models"
 import NotifyItem from "./notifyItem"
+import { LucyColors } from "../../lucyStyling"
 
-interface Props {
-  state: CurNotifyStateEnum,
-}
-
-function AllNotifyItems(props: Props) {
+function AllNotifyItems() {
   const allBodyCSS: React.CSSProperties = {
     textAlign: "center",
     background: LucyColors.eggplant,

@@ -14,12 +14,10 @@ function App() {
     margin: "0"
   }
 
-  const [curState, setCurState] = useState<CurNotifyStateEnum>(CurNotifyStateEnum.ALLITEMS)
-
   return(
     <div style={indexCSS}>
-      <Header state={curState} setState={setCurState}/>
-      <MainPage state={curState}/>
+      <Header />
+      <MainPage />
       <Footer />
     </div>
   )
