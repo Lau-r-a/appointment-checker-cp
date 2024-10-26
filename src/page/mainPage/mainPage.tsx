@@ -1,17 +1,14 @@
-import { SetStateAction } from "react"
 import { 
   AllNotifyItems, 
   CreateNotify,
   DeleteNotify, 
   CheckNotify } from "../../components"
 import { CurNotifyStateEnum } from "../../models"
+import useNotifyStore from "../../stores/notifyStateStore"
 
-interface Props {
-  state: CurNotifyStateEnum
-  setState: React.Dispatch<React.SetStateAction<CurNotifyStateEnum>>
-}
+function MainPage() {
 
-function MainPage(props: Props) {
+  const { notifyState } = useNotifyStore()
   const mainBodyCSS: React.CSSProperties = {
     position: "absolute",
     border: "1px solid red",
@@ -19,14 +16,14 @@ function MainPage(props: Props) {
     marginLeft: "2.5vw",
     width: "95vw",
   }
-  switch (props.state) {
+  switch (notifyState) {
     case CurNotifyStateEnum.ALLITEMS:
       return(
         <>
           <div
           style={mainBodyCSS}
         >
-          <AllNotifyItems props={props.setState}/>
+          <AllNotifyItems />
         </div>
         </>
       )

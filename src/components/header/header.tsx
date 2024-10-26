@@ -1,12 +1,8 @@
 import { LucyColors } from "../../lucyStyling"
 import { CurNotifyStateEnum } from "../../models"
+import useNotifyStore from "../../stores/notifyStateStore"
 
-interface Props {
-  state: CurNotifyStateEnum,
-  setState: React.Dispatch<React.SetStateAction<CurNotifyStateEnum>>
-}
-
-function Header(props: Props) {
+function Header() {
   const headerBodyCSS: React.CSSProperties = {
     position: "fixed",
     top: "0",
@@ -26,7 +22,10 @@ function Header(props: Props) {
     float: "right",
     margin: "5px",
   }
-  switch (props.state) {
+
+  const { notifyState, setNotifyState } = useNotifyStore()
+
+  switch (notifyState) {
     case CurNotifyStateEnum.ALLITEMS:
       return(
         <div 
@@ -42,7 +41,7 @@ function Header(props: Props) {
           >
             <button
               onClick={() => 
-                props.setState(CurNotifyStateEnum.CREATE)
+                setNotifyState(CurNotifyStateEnum.CREATE)
               }
             >
               Create Notification
@@ -65,7 +64,7 @@ function Header(props: Props) {
           >
             <button
               onClick={() => 
-                props.setState(CurNotifyStateEnum.ALLITEMS)
+                setNotifyState(CurNotifyStateEnum.ALLITEMS)
               }
             >
               Break creation
