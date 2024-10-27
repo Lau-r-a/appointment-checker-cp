@@ -12,7 +12,7 @@ function MainPage() {
   const mainBodyCSS: React.CSSProperties = {
     position: "absolute",
     border: "1px solid red",
-    marginTop: "7vh",
+    marginTop: "100px",
     marginLeft: "2.5vw",
     width: "95vw",
   }

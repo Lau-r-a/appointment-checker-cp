@@ -16,63 +16,38 @@ function Header() {
   }
   const headerLeftCSS: React.CSSProperties = {
     float: "left",
-    margin: "5px",
+    margin: "20px",
   }
   const headerRightCSS: React.CSSProperties = {
     float: "right",
-    margin: "5px",
+    margin: "20px",
   }
 
   const { notifyState, setNotifyState } = useNotifyStore()
 
-  switch (notifyState) {
-    case CurNotifyStateEnum.ALLITEMS:
-      return(
+    return(
+      <div 
+        style={headerBodyCSS}
+      >
         <div 
-          style={headerBodyCSS}
+          style={headerLeftCSS}
         >
-          <div 
-            style={headerLeftCSS}
-          >
-            Header
-          </div>
-          <div 
-            style={headerRightCSS}
-          >
-            <button
-              onClick={() => 
-                setNotifyState(CurNotifyStateEnum.CREATE)
-              }
-            >
-              Create Notification
-            </button>
-          </div>
+          Appointment-Checker
         </div>
-      )
-    case CurNotifyStateEnum.CREATE:
-      return(
         <div 
-          style={headerBodyCSS}
+          style={headerRightCSS}
         >
-          <div 
-            style={headerLeftCSS}
+          {notifyState == CurNotifyStateEnum.ALLITEMS ? <button
+            onClick={() => 
+              setNotifyState(CurNotifyStateEnum.CREATE)
+            }
           >
-            Header
-          </div>
-          <div 
-            style={headerRightCSS}
-          >
-            <button
-              onClick={() => 
-                setNotifyState(CurNotifyStateEnum.ALLITEMS)
-              }
-            >
-              Break creation
-            </button>
+            Create Notification
+          </button>
+          : ""}
         </div>
       </div>
     )
-  }
 }
 
 export default Header
