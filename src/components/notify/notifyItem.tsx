@@ -1,6 +1,7 @@
 import useNotifyStore from "../../stores/notifyStateStore"
 import Notification from "../../models/notification"
 import { CurNotifyStateEnum } from "../../models"
+import { Button } from "../../lucyStyling"
 
 function NotifyItem(item: Notification) {
   const { setNotifyState } = useNotifyStore()
@@ -30,11 +31,11 @@ function NotifyItem(item: Notification) {
         <p>VisitMotiveIds:</p>
         <p>{item.drLibParams.visitMotiveIds}</p>  
       </div>
-      <button
+      <Button
         onClick = {() => setNotifyState(CurNotifyStateEnum.DELETE)}
       >
         Delete item
-      </button>
+      </Button>
     </div>
   )
 }
