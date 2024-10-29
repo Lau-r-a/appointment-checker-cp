@@ -1,4 +1,4 @@
-import { LucyColors } from "../../lucyStyling"
+import { Button, LucyColors } from "../../lucyStyling"
 import { CurNotifyStateEnum } from "../../models"
 import useNotifyStore from "../../stores/notifyStateStore"
 
@@ -37,13 +37,13 @@ function Header() {
         <div 
           style={headerRightCSS}
         >
-          {notifyState == CurNotifyStateEnum.ALLITEMS ? <button
+          {notifyState == CurNotifyStateEnum.ALLITEMS ? <Button
             onClick={() => 
               setNotifyState(CurNotifyStateEnum.CREATE)
             }
           >
             Create Notification
-          </button>
+          </Button>
           : ""}
         </div>
       </div>

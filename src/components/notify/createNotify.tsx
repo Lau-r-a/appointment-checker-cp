@@ -1,7 +1,8 @@
 import React from "react"
-import { LucyColors } from "../../lucyStyling"
+import { Button, LucyColors } from "../../lucyStyling"
 import useNotifyStore from "../../stores/notifyStateStore"
 import { CurNotifyStateEnum } from "../../models"
+import { Input } from "../../lucyStyling"
 function CreateNotify() {
   const createNotifyCSS: React.CSSProperties = {
     textAlign: "center",
@@ -10,11 +11,10 @@ function CreateNotify() {
     paddingTop: "1vh",
     paddingBottom: "1vh",
   }
-  const createNotifyInputFieldCSS: React.CSSProperties = {
-    backgroundColor: LucyColors.eggplantTwo,
-    border: `1px solid ${LucyColors.apricot}`,
-    borderRadius: "0.25rem",
-    color: LucyColors.apricot
+
+  const errMessage: React.CSSProperties = {
+    color: LucyColors.blush,
+    fontWeight: "bold"
   }
 
   const { setNotifyState } = useNotifyStore()
@@ -27,61 +27,33 @@ function CreateNotify() {
     <div 
       style={createNotifyCSS}
     >
+      <p>Custom name</p>
+      <Input />
       <p>
-        ItemID
+        Custom description
       </p>
-      <input
-        style={createNotifyInputFieldCSS}
-      >
-      </input>
+      <Input />
       <p>
-        AgendaID
+        URL
       </p>
-      <input
-        style={createNotifyInputFieldCSS}
-      >
-      </input>
-      <p>
-        InsuranceSector
+      <Input />
+      <p
+        style={errMessage}
+      >URL IS INVALID!      
       </p>
-      <input
-        style={createNotifyInputFieldCSS}
-      >
-      </input>
-      <p>
-        PracticeIDs
-      </p>
-      <input
-        style={createNotifyInputFieldCSS}
-      >
-      </input>
-      <p>
-        Telehealth
-      </p>
-      <input
-        style={createNotifyInputFieldCSS}
-      >
-      </input>
-      <p>
-        VisitMotiveIDs
-      </p>
-      <input
-        style={createNotifyInputFieldCSS}
-      >
-      </input>
       <div
         style={{marginTop: "2.5vh"}}
       >
-        <button
+        <Button
           onClick={buttonClicked}
         >
           Done
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={buttonClicked}
         >
           Cancel
-        </button>
+        </Button>
       </div>
     </div>
   )

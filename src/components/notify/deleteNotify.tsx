@@ -1,7 +1,15 @@
 import { CurNotifyStateEnum } from "../../models"
 import useNotifyStore from "../../stores/notifyStateStore"
+import { Button, LucyColors } from "../../lucyStyling"
 
 function DeleteNotify() {
+  const deleteNotifyCSS: React.CSSProperties = {
+    textAlign: "center",
+    background: LucyColors.eggplant,
+    borderRadius: "1rem",
+    paddingTop: "1vh",
+    paddingBottom: "1vh",
+  }
   
   const { setNotifyState } = useNotifyStore()
 
@@ -9,20 +17,22 @@ function DeleteNotify() {
     setNotifyState(CurNotifyStateEnum.ALLITEMS)
   }
   return(
-    <div>
+    <div
+      style={deleteNotifyCSS}
+    >
       <h1>
         Are you shure to delete the item?
       </h1>
-      <button
+      <Button
         onClick={buttonClicked}
       >
         yes
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={buttonClicked}
       >
         no
-      </button>
+      </Button>
     </div>
   )
 }
