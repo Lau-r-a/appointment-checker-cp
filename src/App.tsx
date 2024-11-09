@@ -1,11 +1,10 @@
 import { Footer, Header } from "./components"
 import { MainPage } from "./page"
 import { LucyColors } from "./lucyStyling"
-import { Route, Switch } from "wouter"
 import { useEffect, useState } from "react"
 import ControllerRequest from "./api/controllerRequest"
 import CurRequestState from "./models/enums/curRequestState"
-import { Axios, AxiosError } from "axios"
+import LoginPage from "./page/loginPage/loginPage"
 
 function App() {
 
@@ -22,18 +21,32 @@ function App() {
 
   useEffect(() => {
     const result = ControllerRequest(CurRequestState.GETALL)
-    setIsVeryfied(result instanceof AxiosError)
-    console.log("Controller request = ", result)
-    console.log("isVeryfied", isVeryfied)
+    result
+      .then(() => {
+        setIsVeryfied(true)
+      })
+      .catch(() => {
+        setIsVeryfied(false)
+      })
   }, [])
 
-  return(
-    <div style={indexCSS}>
-      <Header />
-      <MainPage />
-      <Footer />
-    </div>
-  )
+  if (isVeryfied) {
+    return(
+      <div style={indexCSS}>
+        <Header />
+        <MainPage />
+        <Footer />
+      </div>
+    )
+  }
+  else {
+    return(
+      <div style={indexCSS}>
+        <LoginPage />
+      </div>
+    )
+  }
+  
 }
 
 export default App
